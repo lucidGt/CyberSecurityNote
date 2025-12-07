@@ -1,0 +1,31 @@
+查看服务器返回数据的两种方式
+截断代理(Burpsuite)
+开发工具-Network->Headers
+Server头
+x-开头是非标准头，经常泄露目标技术栈的额外信息
+x-amz-cf-id表示应用使用Amazon CloudFront
+X-Powered_By (Php.in->expose_php = off)
+X-aspnet-Version
+
+rebots.txt
+sitemap.xml
+
+/usr/share/dirb/worldlists/common.txt
+
+dirb
+-r 非递归爆破路径
+-z 10 延迟10毫秒
+
+Nikto (OSCP允许使用）
+包含上千检查点，包括服务器版本、配置错误
+nikto -host=xxx -maxtime=30s
+
+Burpsuite
+1.截断代理
+2.向服务端提交不同的数据
+3.禁用默认截断 
+4.FireFox安装代理切换插件
+5.FireFox配置
+6.HTTPS
+Listeners
+Export CA certificate

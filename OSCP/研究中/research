@@ -1,0 +1,35 @@
+http://10.129.229.26:55555/baskets
+
+maxcdn.bootstrapcdn.com
+
+http://maxcdn.bootstrapcdn.com:55555/web
+xxxxxxx
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-03 00:26 EST
+Nmap scan report for 10.129.230.159 (10.129.230.159)
+Host is up (0.54s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.6 (Ubuntu Linux; protocol 2.0)
+80/tcp   open  http    Apache httpd 2.4.18
+3000/tcp open  http    Node.js Express framework
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.19
+Network Distance: 2 hops
+Service Info: Host: 127.0.1.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+GraphQL
+helpme@helpme.com
+5d3c93182bb20f07b994a7f617e99cff:godhelpmeplz
+
+helpme,godhelpmeplz
+
+http://help.htb/support/?v=view_tickets&action=ticket&param[]=4&param[]=attachment&param[]=1&param[]=6
+
+http://help.htb/support/?v=view_tickets&action=ticket&param[]=4&param[]=attachment&param[]=1&param[]=6 and 1=1
+
+d318f44739dced66793b1a603028133a76ae680e:Welcome1  
+
+uname -a 

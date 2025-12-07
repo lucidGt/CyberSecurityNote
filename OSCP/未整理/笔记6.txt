@@ -1,0 +1,16 @@
+sudo apt install seclists
+Domain Name System (DNS) 是一个层级分布式数据库
+DNS工作过程
+DNS服务器缓存，操作系统缓存，游览器等应用程序有独立的缓存
+DNS权威服务器控制缓存TTL
+DNS是主动信息收集最有价值的服务类型
+DNS记录类型
+NS 包含承载域DNS记录的授权服务器的名称
+A 包含主机名IP
+MX 包含负责处理该域电子邮件的服务器的名称（有优先级）
+PTR 指针记录（反向区域使用）
+CNAME 别名记录，指向其他主机记录
+TXT 文本记录，可包含任意数据，常用于域所有权验证
+
+host www.xxx.com 解析IP地址 （默认解析A记录）
+host -t mx xxx.com 指定解析类型

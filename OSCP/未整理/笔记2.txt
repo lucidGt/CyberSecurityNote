@@ -1,0 +1,36 @@
+page=data;text/plain,<? echo shell_exec("dir") ?>
+
+searchsploit
+FUZZER
+
+SyncBreeze version 
+
+mfc-
+
+1.EIP
+2.BadChar
+3.Build peload
+3.Find JMP ESP (mona)
+4.EXP Inject
+
+Crossfire 13327
+ss -pantulo | grep 13327 查看侦听端口
+
+WINDOWS DEP = LINUX NX
+ASLR
+Stack Canaries
+
+调试工具
+EDB
+
+checksec
+tar -zxf
+
+查看文件属性
+sudo checksec --file=绝对地址
+
+通过引导参数关闭NX
+-e键 splash 后加入 noexec=off noexec32=off
+
+调试工具：
+edb

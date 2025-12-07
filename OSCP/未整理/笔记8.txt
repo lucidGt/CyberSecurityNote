@@ -1,0 +1,57 @@
+#!/bin/bash
+greeting='Hello World'
+frist_name=Good
+last_name=Hacker
+echo $first_name $last_name
+echo $greeting
+gretting2="New $gretting"
+
+
+user1=$(whoami)
+user2='whoami'
+#!/bin/bash -x
+var1=value1
+echo $var1
+var2=value2
+echo $var2
+$(var=newvar1)
+echo $var1
+'var2=newvar2'
+
+chmod +x a.sh
+./a.sh
+
+$0 自己
+$1-9 参数
+$# 参数数量参数
+$@ 所有参数
+$? 退出状态
+$USER 用户名
+$HOSTNAME 主机名
+$RANDOM 随机数
+$LINENO 第几行代码
+
+read -p 'UserName:' username
+read -sp 'PassWord:' password
+echo 'thanks'
+
+
+echo 'Are you want to study hacking?'
+read answer
+echo 'Your answer $answer' 
+
+
+
+if xxx
+then
+fi
+
+
+!EXPRESSION
+-n STRING
+-z STRING 
+STRING1 != STRING2
+STRING1 = STRING2
+INTEGER1 -eq INTERGER2
+INTEGER1 -nq INTERGER2
+INTEGER 

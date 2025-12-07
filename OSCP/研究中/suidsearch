@@ -1,0 +1,10 @@
+id,email,password,username
+1324,player@player.htb,PlayerOftheMatch2022,player
+
+find / -type f -perm -4000 2> /dev/null | xargs ls -l
+/usr/local/bin/doas
+/usr/local/etc/doas.conf
+
+man dstat
+           /usr/share/dstat/
+           /usr/local/share/dstat/

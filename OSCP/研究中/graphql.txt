@@ -1,0 +1,15 @@
+curl -X POST http://10.129.230.159:3000/graphql \
+-H 'Content-Type: application/json' \
+-d '{"query":"{__schema{queryType{fields{name type{name kind}}}}}"}' | jq
+      "queryType": {
+        "fields": [
+          {
+            "name": "user",
+            "type": {
+              "name": "User",
+              "kind": "OBJECT"
+            }
+          }
+        ]
+      }
+

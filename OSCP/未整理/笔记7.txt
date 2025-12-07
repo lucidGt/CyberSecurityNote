@@ -1,0 +1,72 @@
+信息收集
+被动搜索
+普通正常访问者
+abort chiff executive
+主动搜索
+枚举 攻击手段
+
+whois信息枚举
+tcp的服务 查询域名，域名服务器，注册者
+反向查IP地址（地址所有者）
+
+GoogleHack
+通过搜索引擎
+site:网站 email
+filetype:log
+ext:jsp ext:cfm 过滤信息
+intitle:"index of" "parent directory"
+
+Netcraft 英国互联网搜索
+searchdns.netcraft.com
+
+Recon-ng 
+
+proxychains recon-ng
+marketplace search GitHub
+marketplace info recon/domains-hosts/google_site_web
+marketplace install recon/domains-hosts/google_site_web
+modules load recon/domains-hosts/google_site_web
+options set SOURCE xxx.com
+run
+back
+show
+show hosts
+
+网络空间搜索引擎
+shodan.io
+geo:经纬度
+city:xxx
+net:192.168.1.0/24
+hostname:xxxroot.com port:"xx"
+os:操作系统
+port:端口
+country:china apache
+
+贴吧类服务搜索
+pastebin.com
+
+
+stack OverFlow
+https://stackoverflow.com/
+
+
+代理平台
+Security Headers
+
+
+收集email信息
+theHarvester -d xx.com -b google
+
+
+Social-Searcher
+https://www.social-searcher.com
+
+twofi  扫描用户twitter信息
+linkedin2username 
+
+OSINT Framework
+osintframework.com
+
+Maltego
+数据挖掘
+

@@ -1,0 +1,1 @@
+﻿(new Object System.Net.WebClient).DoanloadFile("http://baidu.com/","c:\1.exe")

