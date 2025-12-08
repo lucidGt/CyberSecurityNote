@@ -17,15 +17,16 @@
     - [x] Editorial — Notes:ssrf pythonScan git suid
     - [x] Magic — Notes:Sql Inject,upload filter,env Excalation,suid
     - [x] Pandora — Notes:snmp、suid、env excalation,upload filter,sql inject,snmpwalk,writable,ltrace ,authorized_keys
-    - [ ] Builder — Notes:
-    - [ ] LinkVortex — Notes:
-    - [ ] Dog — Notes:
+    - [x] **Builder — Notes:Hard,Java reverse  shell,jenkins**
+    - [x] LinkVortex — Notes:guid,sub demain Search,resource Search,cpu time switch ,Path Link
+    - [x] Dog — Notes:ssh,guid
     - [ ] Markup — Notes:
     - [ ] Editor — Notes:
     - [ ] Usage — Notes:
     - [ ] Titanic — Notes:
 
     ### Windows Boxes
+    
     - [ ] Escape — Notes:
     - [ ] Servmon — Notes:
     - [ ] Support — Notes:
@@ -41,9 +42,9 @@
     - [ ] Certified — Notes:
     - [ ] Heist — Notes:
     - [ ] Tombwatcher (Assumed Breach Box) — Notes:
-
+    
     ### Windows Active Directory Boxes
-
+    
     - [ ] Active — Notes:
     - [ ] Forest — Notes:
     - [ ] Sauna — Notes:
@@ -58,9 +59,9 @@
     - [ ] Adagio (HTB Enterprise Box) — Notes:
     - [ ] TheFrizz — Notes:
     - [ ] Fluffy — Notes:
-
+    
     ### Post OSCP Section (Challenging yourself)
-
+    
     - [ ] Mentor [Linux] — Notes:
     - [ ] Absolute [Windows] — Notes:
     - [ ] Outdated [Windows] — Notes:
@@ -77,11 +78,11 @@
     - [ ] Mailing [Windows] — Notes:
     - [ ] Vintage [Windows] — Notes:
     - [ ] EscapeTwo [Windows] — Notes:
-
+    
     ### ProLabs
     - [ ] Dante — Notes:
     - [ ] RastaLabs — Notes:
-
+    
     ### Post OSCP ProLabs
     - [ ] Zephyr — Notes:
     - [ ] Alchemy — Notes:

@@ -26,7 +26,7 @@ Linux kernel<->Shell(解析命令)<->Terminal
 
 #### 4.历史命令相关 
 
-敏感信息路径:/etc/environment、/etc/profile、etc/zsh/zshenv
+敏感信息路径:/etc/environment、/etc/profile、etc/zsh/zshenv、/proc/self/environ
 
 保存路径:~/.bash_history
 
