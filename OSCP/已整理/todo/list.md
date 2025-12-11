@@ -21,9 +21,9 @@
     - [x] LinkVortex — Notes:guid,sub demain Search,resource Search,cpu time switch ,Path Link
     - [x] Dog — Notes:ssh,guid
     - [ ] Markup — Notes:
-    - [ ] Editor — Notes:
+    - [x] Editor — Notes:ssh guid,env path
     - [ ] Usage — Notes:
-    - [ ] Titanic — Notes:
+    - [ ] Titanic — Notes: 
 
     ### Windows Boxes
     
