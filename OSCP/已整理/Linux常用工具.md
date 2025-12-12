@@ -250,7 +250,7 @@ move_uploaded_file($tmp,$dest);
 
 
 
-7)CSRF（Cross-Site Request Forgery
+7)CSRF（Cross-Site Request Forgery)
 
 原因：改密码、转账、绑定邮箱 没有CSRF Token
 
@@ -284,3 +284,56 @@ move_uploaded_file($tmp,$dest);
 
 修复：关闭debug模式；限制敏感文件访问；关闭提示
 
+### netstat
+
+-t 只看TCP
+
+-u 只看UDP
+
+-l 只看正在监听
+
+-n 用数字显示（不把端口解析成服务名、不把IP反查域名）
+
+-p 显示进程ID
+
+Recv-Q/Send-Q：接收和发送队列等待处理的数据量
+
+LocalAccess：本地监听地址：端口
+
+Foreigin Address：对端地址
+
+State（TCP才有）：LISTEN表示正在连接：UDP一般没有状态
+
+### getcap -r / 2>/dev/null
+
+高风险
+
+cap_setuid：可能直接变成Root
+
+cap_setgid：可能拿到高权限组
+
+cap_dac_override：绕过大多数文件的权限检查
+
+cap_dac_read_search：绕过读权限/目录遍历
+
+cap_fowner：可改不属于自己文件的权限
+
+cap_chown：可改属主
+
+cap_sys_admin：root
+
+cap_sys_ptrace：可ptrace其他进程，可能读内存/偷凭证
+
+cap_sys_module：可加载内核模块
+
+中风险
+
+cap_net_admin：能做网络管理/抓包
+
+cap_net_raw：能发raw包
+
+cap_net_bind_service：绑定1024以下端口
+
+低风险
+
+cap_sys_nice：调整优先级/调度
