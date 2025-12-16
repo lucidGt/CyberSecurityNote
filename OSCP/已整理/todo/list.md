@@ -28,7 +28,7 @@
     ### Windows Boxes
     
     - [ ] Escape — Notes:
-    - [ ] Servmon — Notes:
+    - [x] Servmon — Notes:SSH、INI
     - [ ] Support — Notes:
     - [ ] StreamIO — Notes:
     - [ ] Blackfield — Notes:

@@ -34,8 +34,10 @@
 - [ ] reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA
 - [ ] reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v ConsentPromptBehaviorAdmin
 - [ ] reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy
+- [ ] reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v PromptOnSecureDesktop
 
 ### 1.2 AlwaysInstallElevated（少见但送分）
+
 - [ ] reg query HKCU\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 - [ ] reg query HKLM\Software\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 
@@ -44,11 +46,13 @@
 ---
 
 ## 2) 服务相关提权（OSCP 高频：必查）
+
 ### 2.1 列出服务（先找“第三方/自写”）
 - [ ] sc query state= all
 - [ ] wmic service get Name,DisplayName,PathName,StartMode
 
 **重点找：**
+
 - PathName 指向非系统目录（如 C:\Program Files\Vendor\...）
 - 可疑 EXE/DLL 路径、带空格路径
 
@@ -71,6 +75,7 @@
 - Users / Authenticated Users / 某普通用户 对 EXE 或目录有 (M)/(F)
 
 ### 2.4 服务可修改（更直接）
+
 - [ ] sc sdshow <ServiceName>
 
 （看是否能改 binPath / config；常用工具会更好读）
@@ -104,6 +109,7 @@
 - C:\Users\<user>\Documents\
 
 ### 4.2 命令历史/PS 历史
+
 - [ ] type %APPDATA%\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt 2>nul
 
 ### 4.3 Windows 自带“保存的凭据”
