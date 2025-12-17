@@ -71,3 +71,5 @@ xfreerdp /u:domain\\\user /p:pass /v:ip
 ##### 常用参数
 
 xfreerdp /u:user /p:pass /v:ip /cert:ignore /dynamic-resolution /clipboard
+
+## 
