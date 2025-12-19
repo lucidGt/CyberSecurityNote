@@ -83,6 +83,7 @@
 ---
 
 ## 3) 计划任务（Scheduled Tasks）提权
+
 - [ ] schtasks /query /fo LIST /v
 
 重点找：
@@ -118,6 +119,7 @@
 ---
 
 ## 5) 权限组/特权（看到就兴奋）
+
 ### 5.1 SeImpersonatePrivilege
 
 - [ ] whoami /priv
