@@ -27,9 +27,9 @@
 
     ### Windows Boxes
     
-    - [ ] Escape — Notes:
+    - [x] Escape — Notes:Active Directory、MSSQL、NTLM hash、Certified
     - [x] Servmon — Notes:SSH、INI
-    - [ ] Support — Notes:
+    - [ ] Support — Notes:reverse engineer
     - [ ] StreamIO — Notes:
     - [ ] Blackfield — Notes:
     - [ ] Intelligence — Notes:

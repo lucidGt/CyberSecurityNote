@@ -59,10 +59,14 @@ CrackMapExec（CME）是一个域内攻击/枚举框架。
 | --computers      | 域计算机     |
 | --local-groups   | 本地组       |
 | --pass-pol       | 密码策略     |
+| --password-spray | 密码喷涂     |
+| --no-bruteforce  | 禁止暴力破解 |
 
 ### 模块参数 -M
 
 -M <module>
+
+#### 普通模块
 
 | 模块           | 作用        |
 | -------------- | ----------- |
@@ -73,7 +77,7 @@ CrackMapExec（CME）是一个域内攻击/枚举框架。
 | enum_groups    | 枚举组      |
 | enum_computers | 枚举计算机  |
 
-### 慎用模块
+#### 慎用模块
 
 | 模块        | 风险           |
 | ----------- | -------------- |
