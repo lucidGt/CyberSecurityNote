@@ -37,8 +37,68 @@
 | Post-auth                     | 登录后             |
 | misconfigured service         | 配置错误           |
 | hardcode credentials          | 硬编码密码         |
+| save credentials（savecred）  | 使用缓存的凭据     |
+| run as                        | 以某个用户身份运行 |
+| reconnaissance（recon）       | 侦擦               |
+| identify                      | 识别               |
+| fingerprint                   | 指纹识别           |
+| discover                      | 发现               |
+| scan                          | 扫描               |
+| probe                         | 探测               |
+| trigger                       | 触发               |
+| gain code execution           | 获得代码执行       |
+| obtain a shell                | 拿到shell          |
+| foothold                      | 立足点             |
+| Interal movement              | 横向一栋栋         |
+| reuse credentials             | 复用凭据           |
+| pivot                         | 跳板/转发内网      |
+| domain compromise             | 拿下域             |
 
-## 权限/身份
+## 万能句型
+
+1）我做了什么（方法）
+
+During infomation gathering, identified the target hosts in sacope.
+
+During service enumeration,I enumerated open port and ruining service.
+
+2）我发现了什么（证据）
+
+ Port 445/tcp was open, indicating SMB was exposed.
+
+The web server revelaed a login page running X.
+
+3）我怎么拿下的（动作）
+
+I exploited vulnerability to obtain an install shell.
+
+I the performed privilege escalation to gain administrative access.
+
+4）我怎么证明（验证）
+
+Proof was obtained by reading proof.txt and verifying the current user with whoami/d
+
+## 常用
+
+runas：以另一个身份运行（Run as another user）
+
+/savecred：保存凭据（save credentials / cached credentials）
+
+cached credentials：缓存凭据
+
+stored credentials：已保存凭据
+
+## 术语
+
+1.枚举类动词（enumerate/identify/discover/fingerprint）
+
+2.漏洞利用类（explit/trigger/RCE/foothold）
+
+3.提权类（misconfiguration/privilege escalation/abuse）
+
+4.AD/横向类（later movement/ahthenticate/pivot）
+
+## 	权限/身份
 
 | 英语          | 理解            |
 | ------------- | --------------- |

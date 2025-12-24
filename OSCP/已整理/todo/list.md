@@ -40,7 +40,7 @@
     - [ ] Mailing — Notes:
     - [ ] Administrator — Notes:
     - [ ] Certified — Notes:
-    - [ ] Heist — Notes:
+    - [x] Heist — Notes:
     - [ ] Tombwatcher (Assumed Breach Box) — Notes:
     
     ### Windows Active Directory Boxes
