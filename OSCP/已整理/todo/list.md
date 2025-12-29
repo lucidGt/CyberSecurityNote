@@ -30,10 +30,10 @@
     - [x] Escape — Notes:Active Directory、MSSQL、NTLM hash、Certified
     - [x] Servmon — Notes:SSH、INI
     - [ ] Support — Notes:reverse engineer
-    - [ ] StreamIO — Notes:
+    - [x] StreamIO — Notes:MYSQL、ACL
     - [ ] Blackfield — Notes:
-    - [ ] Intelligence — Notes:
-    - [ ] Jeeves — Notes:
+    - [x] Intelligence — Notes:AD、DNS、PDFRecon、readGMSAPassword
+    - [x] Jeeves — Notes:Jenkins、KeePass、psexec、NTLMHash
     - [ ] Manager — Notes:
     - [ ] Access — Notes:
     - [ ] Aero — Notes:

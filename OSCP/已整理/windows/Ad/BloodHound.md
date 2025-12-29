@@ -59,7 +59,7 @@
 | LoggedOn     | 当前/历史登录用户                                    |
 | RDP          | 谁可以RDP登录那台主机                                |
 | PSRemote     | 谁可以用PowerShell Remoting                          |
-| DCOM         | DCOM执行权限                                         |
+| 下DCOM       | DCOM执行权限                                         |
 | Container    | OU/Container层级关系                                 |
 | GPO          | GPO关联关系                                          |
 | Experimental | 测试功能                                             |
