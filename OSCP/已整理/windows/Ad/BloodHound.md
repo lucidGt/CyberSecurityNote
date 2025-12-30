@@ -132,6 +132,8 @@ neo4j页面：`http://127.0.0.1:7474`
 
 ### 清空数据
 
+Neo4j a12345677
+
 （1）Neo4j Browser
 
 ​	http://127.0.0.1:7474
@@ -145,6 +147,12 @@ neo4j页面：`http://127.0.0.1:7474`
 ​	sudo rm -rf /var/lib/neo4j/data/database/*
 
 ​	sudo systemctl start neo4j
+
+（3）清空指定
+
+	MATCH (n)
+	WHERE toUpper(n.domain) = "STREAMIO.HTB"
+	DETACH DELETE n;
 
 ## 验证对照
 

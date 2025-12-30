@@ -114,3 +114,4 @@ adsearch -h 10.10.10.10 -d example.com -u user -p pass -b "DC=example,DC=com" -s
 | 委派   | userAccountControl | UnconstrainedDelegation |
 | 用户   | objectClass=user   | Get-DomainUser          |
 | 组     | objectClass=group  | Get-DomainGroup         |
+

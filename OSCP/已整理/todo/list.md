@@ -34,8 +34,8 @@
     - [ ] Blackfield — Notes:
     - [x] Intelligence — Notes:AD、DNS、PDFRecon、readGMSAPassword
     - [x] Jeeves — Notes:Jenkins、KeePass、psexec、NTLMHash
-    - [ ] Manager — Notes:
-    - [ ] Access — Notes:
+    - [x] Manager — Notes:LDAP，MSSQL，ADCS
+    - [x] Access — Notes:ftp,cmdkey,bruteZip,readPst
     - [ ] Aero — Notes:
     - [ ] Mailing — Notes:
     - [ ] Administrator — Notes:
