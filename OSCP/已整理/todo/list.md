@@ -36,7 +36,7 @@
     - [x] Jeeves — Notes:Jenkins、KeePass、psexec、NTLMHash
     - [x] Manager — Notes:LDAP，MSSQL，ADCS
     - [x] Access — Notes:ftp,cmdkey,bruteZip,readPst
-    - [ ] Aero — Notes:
+    - [ ] Aero — Notes:要求visual studio build 
     - [ ] Mailing — Notes:
     - [ ] Administrator — Notes:
     - [ ] Certified — Notes:
