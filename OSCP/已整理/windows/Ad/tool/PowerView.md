@@ -96,3 +96,31 @@ Get-DomainUser -TrustedToAuth
 
 Get-DomainComputer -properties ms-Mcs-AdmPwd
 
+## （5）PsCredential凭据
+
+$pass = ConvertTo-SecureString 'aA12345677..' -AsPlainText -Force
+
+$cred = New-Object System.Management.Automation.PsCredential("administrator\BENJAMIN",$pass)
+
+## （6）Find-DomainShare
+
+1）详细输出share
+
+Find-DomainShare -Verbose
+
+2）强制检查当前凭据能访问的共享
+
+Find-DomainShare -CheckShareAccess -Verbose
+
+3）如果上面没输出，用Invoke-ShareFinder 主动扫描
+
+Invoke-ShareFinder -CheckShareAccess -Verbose
+
+4）排除默认共享，只看自定义的
+
+Invoke-ShareFinder -ExcludeStandard -CheckShareAccess -Verbose
+
+5）直接枚举特定主机（替代DC或文件服务路径）
+
+Find-DomainShare -ComputerName DC01.administrator.local -CheckShareAccess
+

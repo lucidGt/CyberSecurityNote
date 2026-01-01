@@ -37,8 +37,8 @@
     - [x] Manager — Notes:LDAP，MSSQL，ADCS
     - [x] Access — Notes:ftp,cmdkey,bruteZip,readPst
     - [ ] Aero — Notes:要求visual studio build 
-    - [ ] Mailing — Notes:
-    - [ ] Administrator — Notes:
+    - [x] Mailing — Notes:LFI、Mail
+    - [x] Administrator — Notes:BloodHound、TargetedKerberoast、DCSync
     - [ ] Certified — Notes:
     - [x] Heist — Notes:
     - [ ] Tombwatcher (Assumed Breach Box) — Notes:

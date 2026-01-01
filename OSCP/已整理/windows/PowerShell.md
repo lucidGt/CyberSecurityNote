@@ -84,6 +84,55 @@ Get-ChildItem
 
 ​	(4)变量
 
+## PowerShell自动变量(Automatic Variables)
+
+### 路径与位置类
+
+| 参数           | 作用               |
+| -------------- | ------------------ |
+| $pwd           | 当前目录           |
+| $home          | 当前用户的主目录   |
+| $PSScriptRoot  | 脚本所在目录       |
+| $PSCommandPath | 当前脚本的完整路径 |
+
+小技巧:$pwd是对象,$pwd.Path才是字符串路径
+
+### 上一条命令状态类
+
+| 参数          | 作用                                 |
+| ------------- | ------------------------------------ |
+| $?            | 上一条命令是否成功                   |
+| $LASTEXITCODE | 上一条外部程序(exe)退出码(0代表成功) |
+| $Error        | 错误记录数组                         |
+
+### 管道与当前对象类
+
+| 参数   | 作用                                                   |
+| ------ | ------------------------------------------------------ |
+| $_     | 管道里的"当前对象" (ForEach-Object / Where-Object常用) |
+| $args  | 传给脚本/函数的位置参数数组                            |
+| $input | 管道输入集合                                           |
+
+### 进程与环境类
+
+| 参数            | 作用                                               |
+| --------------- | -------------------------------------------------- |
+| $PID            | 当前PowerShell进程Id                               |
+| $PSVersionTable | PowerShell版本信息                                 |
+| $env:Name       | 环境变量($env:USERPROFILE / $env:PATH / $env:TEMP) |
+
+### 其他常用
+
+| 参数         | 作用       |
+| ------------ | ---------- |
+| $null        | 空值       |
+| $true/$false | 布尔值     |
+| $PSItem:     | 基本等价$_ |
+
+Get-Variable
+
+Get-ChildItem
+
 ## PowerShell的命令哲学
 
 (1)动词-名词(Vedr-Noun)
@@ -303,6 +352,12 @@ Select-String -Path *.ini -Pattern "password"
 -AllMatches
 
 一行多个匹配结果抓出来
+
+## 特殊用法
+
+Get-Item -Path $pwd -Stream * -Force 查看隐藏文件，包括文件流
+
+Get-Item -Path .\\\* -Stream * -Force 查看隐藏文件，包括文件流
 
 ## PowerShell Vs Bash
 

@@ -204,7 +204,7 @@ Add-DomainGroupMember -Identity "<targetGroup>" -Members "<xx\usr>" -Credential 
 
 #强制修改用户密码
 
-$pass = Converto-SecuryString '<password>' -AsPlainText -Force
+$pass = ConvertTo-SecureString '<password>' -AsPlainText -Force
 
 Set-DomainUserPassword -Identity '<user>' -AccountPassword $pass -Credential $cred
 
@@ -212,7 +212,7 @@ Set-DomainUserPassword -Identity '<user>' -AccountPassword $pass -Credential $cr
 
 net group "<Target_Group>" <user> /add /domain
 
-net user <user> <pass> /domain
+net user <user> <pass> /domainget
 
 ## 读敏感属性
 
