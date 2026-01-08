@@ -70,7 +70,7 @@ Windows 10 build 1809+/Server 2019+
 
 ### 1）攻击机
 
-sudo socat tcp-listen:135,reuseaddr,frok tcp:<target_ip>:9999
+sudo socat tcp-listen:135,reuseaddr,fork tcp:<target_ip>:9999
 
 ### 2）靶机
 

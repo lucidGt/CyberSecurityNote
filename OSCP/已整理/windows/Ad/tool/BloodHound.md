@@ -88,6 +88,12 @@
 
 ### 远程收集
 
+### 1)稳定方案
+
+nxc ldap 10.129.95.180 -u 'fsmith' -p 'Thestrokes23' -d 'EGOTISTICAL-BANK.LOCAL' --bloodhound -c All --dns-server '10.129.95.180'
+
+### 2)替代
+
 bloodhound-python -c All -u <username> -p <password> -ns <dnsServerIp> -d <domain> -dc <domainControllerI> --zip
 
 ### 本地收集
@@ -106,7 +112,9 @@ BloodHound C#采集器，在域内Windows上跑。
 
 Import-Module .\SharpHound.ps1
 
-Invoke-BloodHound -CollectMethod All
+Invoke-BloodHound -CollectionMethod All
+
+PowerShell -ep Bypass -Command "Import-Module .\SharpHound.ps1; Invoke-BloodHound -CollectionMethod All -Domain htb -Zip -OutputDirectory C:\Users\svc-alfresco\Documents"
 
 ## 信息分析器
 
